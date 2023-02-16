@@ -14,9 +14,9 @@
         - tabular data (identify years, techniques, art styles, ...)
         - graph data (find clusters, ...)
  - pro's:
-  - clear storyline
-  - different types of data used
-  - no need to train a classification algorithm on thousands of images
+    - clear storyline
+    - different types of data used
+    - no need to train a classification algorithm on thousands of images
 - con's:
   - images have to be cleaned to classify
   
