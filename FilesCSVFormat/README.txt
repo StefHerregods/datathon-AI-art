@@ -33,3 +33,16 @@ Places Table: gives a unique ID to the birth- and deathplaces of artists and is 
 AI generated images using Text-To-Speech technology: contains images generated using Text-To-Speech technology.
 
 We hope that this data will provide valuable insights and inspiration for your projects. Good luck!
+
+
+
+
+#####
+NOTES
+#####
+Introduce data with graph database filtered on our research question
+FID for artists: see how well the AI can capture artists
+graph database algorithms
+detect AI generated or not
+AI generated or not, and find which variables add most information
+Compare clustering patterns between 
