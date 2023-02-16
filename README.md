@@ -19,6 +19,8 @@
   - no need to train a classification algorithm on thousands of images
 - con's:
   - images have to be cleaned to classify
+  
+**Idea 2**
 
 ## To-do list:
 - more data exploration
