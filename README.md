@@ -21,6 +21,7 @@
   - images have to be cleaned to classify
   
 **Idea 2**
+...
 
 ## To-do list:
 - more data exploration
