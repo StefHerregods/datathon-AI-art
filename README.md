@@ -41,3 +41,8 @@
     - graph databases/neo4j?
 
 
+
+
+## NOTES
+- There are already a few GAN detection models available. However, as these images are created by stable diffusion (diffusion model), there are no models available as of yet that are able to detect fakes produced by these models. Therefore, we use GAN detection models on the stable diffusion outputs as our second option.
+- Using model based on resnet50 and code from 
