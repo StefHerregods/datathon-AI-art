@@ -1,1 +1,4 @@
-Gan Detection/GANimageDetection-main
+Gan Detection/GANimageDetection-main/*/*.png
+Gan Detection/GANimageDetection-main/*/*.pth
+Gan Detection/GANimageDetection-main/.idea
+Gan Detection/GANimageDetection-main/__pycache__
