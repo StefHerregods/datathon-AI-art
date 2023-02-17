@@ -28,12 +28,12 @@
 - **develop the main story/question further**
 - image preprocessing
   - Real paintings
-    - remove wikipedia banner (can be on top or bottom)
-    - remove wikipedia logo (e.g., df1[40])
+    - [x] remove wikipedia banner (function is ready)
+    - [ ] remove wikipedia logo (e.g., df1[40])  **Stef is working on this**
   - AI generated
-    - remove censorde (black) images (e.g., df2[202])
-  - make all paintings same size
-- classify images (AI or not?)
+    - [ ] remove censorde (black) images (e.g., df2[202])
+  - [ ] make all paintings same size
+- [ ] classify images (AI or not?)
 - in what way do misclassified images differ from classified images?
   - on the level of the images themselves
   - in terms of extra data
