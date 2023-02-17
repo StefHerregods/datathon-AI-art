@@ -2,7 +2,7 @@
 
 ## Main story/question:
 
-(written by Stef; add more details or different ideas if you want; let's try to make this concrete as quickly as possible :smile:)
+(add more details or different ideas if you want; let's try to make this concrete as quickly as possible :smile:)
 
 **Idea 1**
 - Our client has developed an algorithm to differentiate AI art from real paintings (for this, we use an already existing AI art classifier). They are not yet satisfied with the current performance and has asked us to look into where it goes wrong.
@@ -26,12 +26,14 @@
 ## To-do list:
 - more data exploration
 - **develop the main story/question further**
+  - what features do we want to use? -> clean these features
 - image preprocessing
   - Real paintings
     - [x] remove wikipedia banner (function is ready)
-    - [ ] remove wikipedia logo (e.g., df1[40])  **Stef is working on this**
+    - [ ] remove wikipedia logo (e.g., df1[40])  
   - AI generated
-    - [ ] remove censorde (black) images (e.g., df2[202])
+    - [ ] remove censored (black) images (e.g., df2[202])
+      - function to identify is ready, I will create the df soon.
   - [ ] make all paintings same size
 - [ ] classify images (AI or not?)
 - in what way do misclassified images differ from classified images?
