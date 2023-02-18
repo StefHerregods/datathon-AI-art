@@ -32,8 +32,7 @@
     - [x] remove wikipedia banner (function is ready)
     - [ ] remove wikipedia logo (e.g., df1[40])  
   - AI generated
-    - [ ] remove censored (black) images (e.g., df2[202])
-      - function to identify is ready, I will create the df soon.
+    - [x] remove censored (black) images (e.g., df2[202]) **Generated_preprocessed now contains the column 'censored: True/False'**
   - [ ] make all paintings same size
 - [ ] classify images (AI or not?)
 - in what way do misclassified images differ from classified images?
