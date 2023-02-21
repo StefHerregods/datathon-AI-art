@@ -5,7 +5,7 @@ import requests
 path = os.getcwd()
 TYPE = "real"   # "real" or "fake"
 
-with open("image_sources/df_" + TYPE + ".csv") as csvfile:
+with open("df_" + TYPE + ".csv") as csvfile:
     csvrows = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in csvrows:
         filename = ("images_" + TYPE + "/" + row[0] + ".png")

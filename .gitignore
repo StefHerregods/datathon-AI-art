@@ -1,7 +1,5 @@
-Gan_Detection/GANimageDetection-main/*/*.png
-Gan_Detection/GANimageDetection-main/*/*.pth
-Gan_Detection/GANimageDetection-main/.idea
-Gan_Detection/GANimageDetection-main/__pycache__
-Gan_Detection/GANimageDetection-main/*/*.ckpt
-border_removed
-no_watermark
+Gan_Detection/*/*.png
+Gan_Detection/*/*.pth
+Gan_Detection/.idea
+Gan_Detection/__pycache__
+Gan_Detection/*/*.ckpt

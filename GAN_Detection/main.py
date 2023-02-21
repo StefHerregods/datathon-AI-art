@@ -18,11 +18,13 @@ import argparse
 from PIL  import Image
 from resnet50nodown import resnet50nodown
 
+TYPE = 'fake' # 'fake' or 'real'
+
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(description="This script tests the network on an image folder and collects the results in a CSV file.", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--weights_path', '-m', type=str , default='./weights/gandetection_resnet50nodown_stylegan2.pth', help='weights path of the network')
-    parser.add_argument('--input_folder', '-i', type=str , default='./example_images', help='input folder with PNG and JPEG images')
+    parser.add_argument('--weights_path', '-m', type=str , default='weights/gandetection_resnet50nodown_stylegan2.pth', help='weights path of the network')
+    parser.add_argument('--input_folder', '-i', type=str , default='images_' + str(TYPE), help='input folder with PNG and JPEG images')
     parser.add_argument('--output_csv'  , '-o', type=str , default=None, help='output CSV file')
     config = parser.parse_args()
     weights_path = config.weights_path
@@ -34,7 +36,7 @@ if __name__ == '__main__':
     net = resnet50nodown(device, weights_path)
     
     if output_csv is None:
-        output_csv = 'out.'+os.path.basename(input_folder)+'.csv'
+        output_csv = 'output_'+str(TYPE)+'.csv'
     
     list_files = sorted(sum([glob.glob(os.path.join(input_folder,'*.'+x)) for x in ['jpg','jpeg','png']], list()))
     num_files = len(list_files)
