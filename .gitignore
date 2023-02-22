@@ -3,3 +3,4 @@ Gan_Detection/*/*.pth
 Gan_Detection/.idea
 Gan_Detection/__pycache__
 Gan_Detection/*/*.ckpt
+Image Features/.idea/workspace.xml
