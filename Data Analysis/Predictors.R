@@ -2,6 +2,7 @@ library(readr)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(car) 
 
 ## Load full df
 df_raw <- read.csv("../DataProcessing/new_final_df.csv")
@@ -24,14 +25,67 @@ df.plot <- df %>%
 
 
 ## Logistic regression
-model <- glm(accuracy_prediction~brightness+contrast+edge+saturation+num_rels, data=df, family="binomial")
-summary(model)
+model1 <- glm(AI_Generated~brightness+contrast+edge+saturation+num_rels, data=df, family="binomial")
+summary(model1)
+
+model2 <- glm(classification~brightness+contrast+edge+saturation+num_rels, data=df, family="binomial")
+summary(model2)
+
+model3 <- glm(accuracy_prediction~brightness+contrast+edge+saturation+num_rels, data=df, family="binomial")
+summary(model3)
+
+
+ggplot(df.plot, aes(score, AI_Generated)) +
+  geom_point(alpha=0.01) +
+  geom_smooth(method="glm", method.args = list(family = "binomial")) +
+  facet_grid(.~feature) +
+  theme(
+    strip.text.x = element_text(size=12, color='#414141', margin=margin(b=8)),
+    strip.background = element_rect(fill=NA),
+    axis.title.x = element_text(size=12, color='#414141', margin=margin(t=8)),
+    axis.title.y = element_text(size=12, color='#414141', margin=margin(r=8)),
+    axis.ticks = element_line(color='#414141'),
+    panel.border = element_rect(color='#414141', fill=NA),
+    panel.background = element_rect(fill=NA),
+    legend.position = "top",
+    axis.text=element_text(size=9, color='#414141')
+  )
+
+ggplot(df.plot, aes(score, classification)) +
+  geom_point(alpha=0.01) +
+  geom_smooth(method="glm", method.args = list(family = "binomial")) +
+  facet_grid(.~feature)  +
+  theme(
+    strip.text.x = element_text(size=12, color='#414141', margin=margin(b=8)),
+    strip.background = element_rect(fill=NA),
+    axis.title.x = element_text(size=12, color='#414141', margin=margin(t=8)),
+    axis.title.y = element_text(size=12, color='#414141', margin=margin(r=8)),
+    axis.ticks = element_line(color='#414141'),
+    panel.border = element_rect(color='#414141', fill=NA),
+    panel.background = element_rect(fill=NA),
+    legend.position = "top",
+    axis.text=element_text(size=9, color='#414141')
+  )
 
 
 ggplot(df.plot, aes(score, accuracy_prediction)) +
   geom_point(alpha=0.01) +
   geom_smooth(method="glm", method.args = list(family = "binomial")) +
-  facet_wrap(.~feature) 
+  facet_grid(.~feature)  +
+  theme(
+    strip.text.x = element_text(size=12, color='#414141', margin=margin(b=8)),
+    strip.background = element_rect(fill=NA),
+    axis.title.x = element_text(size=12, color='#414141', margin=margin(t=8)),
+    axis.title.y = element_text(size=12, color='#414141', margin=margin(r=8)),
+    axis.ticks = element_line(color='#414141'),
+    panel.border = element_rect(color='#414141', fill=NA),
+    panel.background = element_rect(fill=NA),
+    legend.position = "top",
+    axis.text=element_text(size=9, color='#414141')
+  )
+
+
+ggplot(df.plot, aes(score, ))
 
 
 #ggplot(df, aes(edge, accuracy_prediction)) +
@@ -41,12 +95,42 @@ ggplot(df.plot, aes(score, accuracy_prediction)) +
 
 ggplot(df.plot, aes(score)) +
   geom_histogram() +
-  facet_grid(feature~AI_Generated)
+  facet_grid(feature~AI_Generated) +
+  theme(
+    strip.text.x = element_text(size=12, color='#414141', margin=margin(b=8)),
+    strip.background = element_rect(fill=NA),
+    axis.title.x = element_text(size=12, color='#414141', margin=margin(t=8)),
+    axis.title.y = element_text(size=12, color='#414141', margin=margin(r=8)),
+    axis.ticks = element_line(color='#414141'),
+    panel.border = element_rect(color='#414141', fill=NA),
+    panel.background = element_rect(fill=NA),
+    legend.position = "top",
+    axis.text=element_text(size=9, color='#414141')
+  )
 
 
-ggplot(df.plot, aes(feature, score, fill=(feature))) +
-  geom_violin() +
-  facet_grid(.~as.factor(AI_Generated))
+ggplot(df.plot, aes(feature, score, fill=feature)) +
+  geom_boxplot() +
+  facet_grid(.~as.factor(AI_Generated))  +
+  theme(
+    strip.text.x = element_text(size=12, color='#414141', margin=margin(b=8)),
+    strip.background = element_rect(fill=NA),
+    axis.title.x = element_text(size=12, color='#414141', margin=margin(t=8)),
+    axis.title.y = element_text(size=12, color='#414141', margin=margin(r=8)),
+    axis.ticks = element_line(color='#414141'),
+    panel.border = element_rect(color='#414141', fill=NA),
+    panel.background = element_rect(fill=NA),
+    legend.position = "top",
+    axis.text=element_text(size=9, color='#414141')
+  )
 
 
 t.test(df.fake$saturation, df.real$saturation)
+
+
+vif(model)
+
+corrplot(cor(df))
+
+
+

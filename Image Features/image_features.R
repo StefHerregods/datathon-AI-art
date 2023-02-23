@@ -29,7 +29,7 @@ df_real <- df_raw %>%
   drop_na(logit) %>%
   arrange(id)
 
-df.g <- gather(df_new, key=feature, value = score, 
+df.g <- gather(df, key=feature, value = score, 
                c("brightness","contrast", "edge", "saturation"))
 
 df_fake.g <- gather(df_fake, key=feature, value = score, 
@@ -39,7 +39,8 @@ df_real.g <- gather(df_real, key=feature, value = score,
                     c("brightness","contrast", "edge", "saturation"))
 
 ggplot(df.g, aes(x=logit, y = score, group = feature, color = feature)) + 
-  geom_smooth(lwd=1, method='gam') +
+  geom_point(alpha=0.2) +
+  #geom_smooth(lwd=1, method='glm') +
   ylim(c(0, 200)) +
   #facet_grid(~feature, labeller = as_labeller(feature_names)) +
   labs(
