@@ -5,7 +5,7 @@ This project attempts to find possible factors that could help existing GAN mode
 The datasets, provided by KU Leuven, could be found in the FilesCSVFormat folder and include:
   - Scraped data from Wikipedia and meta-data of artists and artworks. 
   - Frame of AI generated images using a text-to-image model
-  - Information and Entity-Relation diagram about the datasets
+  - Information and Entity-Relation diagram on the datasets
 
 ## Documentation
   - Data Processing: tabular processing and image preprocessing scripts and dataframes 
