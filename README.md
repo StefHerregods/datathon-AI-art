@@ -13,4 +13,4 @@ The datasets, provided by KU Leuven, could be found in the FilesCSVFormat folder
   - Data Processing: tabular processing and image preprocessing of scripts and dataframes 
   - GAN Detection: outputs using an existing GAN model based on resnet50
   - Image Features: outputs of feature extractions of images 
-  - Community Dection: graphical exploration using Neo4j
+  - Data Analysis: analysis using logistic regresion
