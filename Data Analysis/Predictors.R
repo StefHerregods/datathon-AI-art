@@ -35,8 +35,8 @@ model3 <- glm(accuracy_prediction~brightness+contrast+edge+saturation+num_rels, 
 summary(model3)
 
 
-ggplot(df.plot, aes(score, AI_Generated)) +
-  geom_point(alpha=0.01) +
+ggplot(df.plot, aes(score, AI_Generated, col=feature)) +
+  geom_point(alpha=0.01, col="black") +
   geom_smooth(method="glm", method.args = list(family = "binomial")) +
   facet_grid(.~feature) +
   theme(
@@ -47,12 +47,12 @@ ggplot(df.plot, aes(score, AI_Generated)) +
     axis.ticks = element_line(color='#414141'),
     panel.border = element_rect(color='#414141', fill=NA),
     panel.background = element_rect(fill=NA),
-    legend.position = "top",
+    legend.position = "none",
     axis.text=element_text(size=9, color='#414141')
   )
 
-ggplot(df.plot, aes(score, classification)) +
-  geom_point(alpha=0.01) +
+ggplot(df.plot, aes(score, classification, col=feature)) +
+  geom_point(alpha=0.01, col="black") +
   geom_smooth(method="glm", method.args = list(family = "binomial")) +
   facet_grid(.~feature)  +
   theme(
@@ -63,13 +63,13 @@ ggplot(df.plot, aes(score, classification)) +
     axis.ticks = element_line(color='#414141'),
     panel.border = element_rect(color='#414141', fill=NA),
     panel.background = element_rect(fill=NA),
-    legend.position = "top",
+    legend.position = "none",
     axis.text=element_text(size=9, color='#414141')
   )
 
 
-ggplot(df.plot, aes(score, accuracy_prediction)) +
-  geom_point(alpha=0.01) +
+ggplot(df.plot, aes(score, accuracy_prediction, col=feature)) +
+  geom_point(alpha=0.01, col="black") +
   geom_smooth(method="glm", method.args = list(family = "binomial")) +
   facet_grid(.~feature)  +
   theme(
@@ -80,13 +80,9 @@ ggplot(df.plot, aes(score, accuracy_prediction)) +
     axis.ticks = element_line(color='#414141'),
     panel.border = element_rect(color='#414141', fill=NA),
     panel.background = element_rect(fill=NA),
-    legend.position = "top",
+    legend.position = "none",
     axis.text=element_text(size=9, color='#414141')
   )
-
-
-ggplot(df.plot, aes(score, ))
-
 
 #ggplot(df, aes(edge, accuracy_prediction)) +
 #  geom_point(alpha=0.01) +
