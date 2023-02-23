@@ -19,15 +19,8 @@ df <- df_raw %>%
 df_fake <- df %>%
   filter(AI_Generated==1)
 
-df_real <- df_raw %>%
-  select(c("id", "real_logit", "brightness_score_y", "contrast_score_y", "edge_score_y", "saturation_score_y")) %>%
-  rename("logit"="real_logit", 
-         "brightness"="brightness_score_y", 
-         "contrast"="contrast_score_y", 
-         "edge"="edge_score_y", 
-         "saturation"="saturation_score_y") %>%
-  drop_na(logit) %>%
-  arrange(id)
+df_real <- df %>%
+  filter(AI_Generated==0)
 
 df.g <- gather(df, key=feature, value = score, 
                c("brightness","contrast", "edge", "saturation"))
@@ -39,8 +32,7 @@ df_real.g <- gather(df_real, key=feature, value = score,
                     c("brightness","contrast", "edge", "saturation"))
 
 ggplot(df.g, aes(x=logit, y = score, group = feature, color = feature)) + 
-  geom_point(alpha=0.2) +
-  #geom_smooth(lwd=1, method='glm') +
+  geom_smooth(lwd=1, method='glm') +
   ylim(c(0, 200)) +
   #facet_grid(~feature, labeller = as_labeller(feature_names)) +
   labs(
@@ -61,7 +53,7 @@ ggplot(df.g, aes(x=logit, y = score, group = feature, color = feature)) +
 
 
 ggplot(df_fake.g, aes(x=logit, y = score, group = feature, color = feature)) + 
-  geom_smooth(lwd=1, method='gam') +
+  geom_smooth(lwd=1, method='glm') +
   ylim(c(0, 200)) +
   #facet_grid(~feature, labeller = as_labeller(feature_names)) +
   labs(
@@ -81,7 +73,7 @@ ggplot(df_fake.g, aes(x=logit, y = score, group = feature, color = feature)) +
   )
 
 ggplot(df_real.g, aes(x=logit, y = score, group = feature, color = feature)) + 
-  geom_smooth(lwd=1, method='gam') +
+  geom_smooth(lwd=1, method='glm') +
   ylim(c(0, 200)) +
   #facet_grid(~feature, labeller = as_labeller(feature_names)) +
   labs(
