@@ -1,7 +1,7 @@
 # Datathon 2023 
 Host: KU Leuven
 
-This project attempts to find possible factors that could help existing GAN models discern between real and AI images. 
+This project attempts to find possible factors that could help an existing GAN model discern between real and AI images. 
 
 ## Data information: 
 The datasets, provided by KU Leuven, could be found in the FilesCSVFormat folder and include:
