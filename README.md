@@ -1,4 +1,6 @@
-# Datathon 2023 hosted by KU Leuven
+# Datathon 2023 
+Host: KU Leuven
+
 This project attempts to find possible factors that could help existing GAN models discern between real and AI images. 
 
 ## Data information: 
