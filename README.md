@@ -1,4 +1,4 @@
-# Datathon 2023 case competition
+# Datathon 2023 Case Competition
 **Host**: KU Leuven & LStat
 
 **Team**: The Curse of Dimensionality
