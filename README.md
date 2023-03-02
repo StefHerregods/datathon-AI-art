@@ -30,8 +30,8 @@
       - equal number of AI generated and traditional artworks
     - Final models:
       - GAN classifier (*ResNet50 NoDown*)
-      - Image feature classifier
-      - GAN + image feature classifier
+      - Image feature classifier (logistic regression)
+      - GAN + image feature classifier (logistic regression)
 
 4. **Model inspection using logistic regressions and XGBoost** 
 
