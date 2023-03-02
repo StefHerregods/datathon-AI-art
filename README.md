@@ -35,6 +35,11 @@
 
 4. **Model inspection using logistic regressions and XGBoost** 
 
+<p align="center">
+  <img src="Pitch/LogReg.png" width="40%" />
+</p>
+
+
 ## Data information
 The datasets, provided by KU Leuven, can be found in the FilesCSVFormat folder and include:
   - Data scraped from Wikipedia and meta-data of artists and artworks
