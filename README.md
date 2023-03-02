@@ -20,7 +20,7 @@
  2. **Feature engineering** 
     - Artist & artwork clustering (*Neo4j*)
     - Number of recommendations per artwork as a proxy for popularity (*Neo4j*)
-    - Image feature extraction (???)
+    - Image feature extraction (brightness, contrast, edge, saturation)
     
 <img src="Pitch/ROC.png" alt="ROC curve" width="40%" style="display: block; margin: 0 auto;" img align="right"> 
 
